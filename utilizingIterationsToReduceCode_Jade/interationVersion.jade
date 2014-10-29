@@ -1,0 +1,20 @@
+each day, index in {Monday:'monday',Tuesday:'tuesday',Wednesday:'wednesday',Thursday:'thursday',Friday:'friday',Saturday:'saturday',Sunday:'sunday'}
+	div(id=day+'Hours')
+		.hoursLabel
+			label(for=day+"StartTime")= index+":"
+		.hoursClosed
+			input(type='checkbox',id=day+'Close',value='Closed')
+			|Closed
+		.clear
+		div(id=day+'Input',class='row')
+			.three.ninth.mobile
+				input(type='text',name=day+'StartTime',id=day+'StartTime',placeholder='9:00')
+			.one.ninth.mobile
+				span(id=day+'StartSuffix',class='suffix') am
+			.one.ninth.mobile.hoursSeperator
+				|to
+			.three.ninth.mobile
+				input(type='text',name=day+'EndTime',id=day+'EndTime',placeholder='5:00')
+			.one.ninth.mobile
+				span(id=day+'EndSuffix',class='suffix') pm
+	hr
