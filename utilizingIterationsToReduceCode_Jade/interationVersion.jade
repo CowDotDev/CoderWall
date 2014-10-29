@@ -1,20 +1,21 @@
-each day, index in {Monday:'monday',Tuesday:'tuesday',Wednesday:'wednesday',Thursday:'thursday',Friday:'friday',Saturday:'saturday',Sunday:'sunday'}
-	div(id=day+'Hours')
+each day in ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+	- var dayLower = day.toLowerCase();
+	div(id=dayLower+'Hours')
 		.hoursLabel
-			label(for=day+"StartTime")= index+":"
+			label(for=dayLower+"StartTime")= day+":"
 		.hoursClosed
-			input(type='checkbox',id=day+'Close',value='Closed')
+			input(type='checkbox',id=dayLower+'Close',value='Closed')
 			|Closed
 		.clear
-		div(id=day+'Input',class='row')
+		div(id=dayLower+'Input',class='row')
 			.three.ninth.mobile
-				input(type='text',name=day+'StartTime',id=day+'StartTime',placeholder='9:00')
+				input(type='text',name=dayLower+'StartTime',id=dayLower+'StartTime',placeholder='9:00')
 			.one.ninth.mobile
-				span(id=day+'StartSuffix',class='suffix') am
+				span(id=dayLower+'StartSuffix',class='suffix') am
 			.one.ninth.mobile.hoursSeperator
 				|to
 			.three.ninth.mobile
-				input(type='text',name=day+'EndTime',id=day+'EndTime',placeholder='5:00')
+				input(type='text',name=dayLower+'EndTime',id=dayLower+'EndTime',placeholder='5:00')
 			.one.ninth.mobile
-				span(id=day+'EndSuffix',class='suffix') pm
+				span(id=dayLower+'EndSuffix',class='suffix') pm
 	hr
