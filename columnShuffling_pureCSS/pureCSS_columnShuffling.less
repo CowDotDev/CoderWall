@@ -23,11 +23,17 @@
 .smOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
 	.checkVal() when ((@count + @colNum) =< @colTotal){
 		.pure-u-sm-@{colNum}-@{colTotal}.left-sm-@{count},
+		.pure-u-md-@{colNum}-@{colTotal}.left-sm-@{count},
+		.pure-u-lg-@{colNum}-@{colTotal}.left-sm-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.left-sm-@{count},
 		.pure-u-sm-@{colNum}-@{colTotal}.left-@{count} {
 			@p: round(@count / @colTotal * 100, 4);
 			left: ~"@{p}%";
 		}
 		.pure-u-sm-@{colNum}-@{colTotal}.right-sm-@{count},
+		.pure-u-md-@{colNum}-@{colTotal}.right-sm-@{count},
+		.pure-u-lg-@{colNum}-@{colTotal}.right-sm-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.right-sm-@{count},
 		.pure-u-sm-@{colNum}-@{colTotal}.right-@{count} {
 			@p: round(@count / @colTotal * 100, 4);
 			right: ~"@{p}%";
@@ -39,11 +45,15 @@
 .mdOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
 	.checkVal() when ((@count + @colNum) =< @colTotal){
 		.pure-u-md-@{colNum}-@{colTotal}.left-md-@{count},
+		.pure-u-lg-@{colNum}-@{colTotal}.left-md-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.left-md-@{count},
 		.pure-u-md-@{colNum}-@{colTotal}.left-@{count} {
 			@p: round(@count / @colTotal * 100, 4);
 			left: ~"@{p}%";
 		}
 		.pure-u-md-@{colNum}-@{colTotal}.right-md-@{count},
+		.pure-u-lg-@{colNum}-@{colTotal}.right-md-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.right-md-@{count},
 		.pure-u-md-@{colNum}-@{colTotal}.right-@{count} {
 			@p: round(@count / @colTotal * 100, 4);
 			right: ~"@{p}%";
@@ -55,11 +65,13 @@
 .lgOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
 	.checkVal() when ((@count + @colNum) =< @colTotal){
 		.pure-u-lg-@{colNum}-@{colTotal}.left-lg-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.left-lg-@{count},
 		.pure-u-lg-@{colNum}-@{colTotal}.left-@{count} {
 			@p: round(@count / @colTotal * 100, 4);
 			left: ~"@{p}%";
 		}
 		.pure-u-lg-@{colNum}-@{colTotal}.right-lg-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.right-lg-@{count},
 		.pure-u-lg-@{colNum}-@{colTotal}.right-@{count} {
 			@p: round(@count / @colTotal * 100, 4);
 			right: ~"@{p}%";
