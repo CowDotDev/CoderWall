@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	h1 Upload File
+	form(method="post",action="./uploadFile",enctype="multipart/form-data")
+		input(type='file',name="myFile",id='myFile',size="40")
+		input(type="submit",value="Upload")
