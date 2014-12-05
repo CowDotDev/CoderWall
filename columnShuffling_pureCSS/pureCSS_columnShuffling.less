@@ -6,6 +6,7 @@
 		.pure-u-lg-@{colNum}-@{colTotal}.left-@{count},
 		.pure-u-xl-@{colNum}-@{colTotal}.left-@{count} {
 			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
 			left: ~"@{p}%";
 		}
 		.pure-u-@{colNum}-@{colTotal}.right-@{count},
@@ -14,107 +15,243 @@
 		.pure-u-lg-@{colNum}-@{colTotal}.right-@{count},
 		.pure-u-xl-@{colNum}-@{colTotal}.right-@{count} {
 			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
 			right: ~"@{p}%";
 		}
 	}
 	.checkVal();
 	.baseOffset(@colTotal, @colNum, @count + 1);
 }
-.smOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
+// Small Stuff
+.smMediaOffsetsXl(@n, @i: 1) when (@i < @n){
+	.xlSmOffset(@n, @i); // Sm Grid
+	.smMediaOffsetsXl(@n, @i + 1);
+}
+.smMediaOffsetsLg(@n, @i: 1) when (@i < @n){
+	.lgSmOffset(@n, @i); // Sm Grid
+	.smMediaOffsetsLg(@n, @i + 1);
+}
+.smMediaOffsetsMd(@n, @i: 1) when (@i < @n){
+	.mdSmOffset(@n, @i); // Sm Grid
+	.smMediaOffsetsMd(@n, @i + 1);
+}
+.smMediaOffsetsSm(@n, @i: 1) when (@i < @n){
+	.smSmOffset(@n, @i); // Sm Grid
+	.smMediaOffsetsSm(@n, @i + 1);
+}
+
+.xlSmOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
 	.checkVal() when ((@count + @colNum) =< @colTotal){
-		.pure-u-sm-@{colNum}-@{colTotal}.left-sm-@{count},
-		.pure-u-md-@{colNum}-@{colTotal}.left-sm-@{count},
-		.pure-u-lg-@{colNum}-@{colTotal}.left-sm-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.left-sm-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			left: ~"@{p}%";
+		}
+		.pure-u-xl-@{colNum}-@{colTotal}.right-sm-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			right: ~"@{p}%";
+		}
+	}
+	.checkVal();
+	.xlSmOffset(@colTotal, @colNum, @count + 1);
+}
+.lgSmOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
+	.checkVal() when ((@count + @colNum) =< @colTotal){
+		.pure-u-lg-@{colNum}-@{colTotal}.left-sm-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			left: ~"@{p}%";
+		}
+		.pure-u-lg-@{colNum}-@{colTotal}.right-sm-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			right: ~"@{p}%";
+		}
+	}
+	.checkVal();
+	.lgSmOffset(@colTotal, @colNum, @count + 1);
+}
+.mdSmOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
+	.checkVal() when ((@count + @colNum) =< @colTotal){
+		.pure-u-md-@{colNum}-@{colTotal}.left-sm-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			left: ~"@{p}%";
+		}
+		.pure-u-md-@{colNum}-@{colTotal}.right-sm-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			right: ~"@{p}%";
+		}
+	}
+	.checkVal();
+	.mdSmOffset(@colTotal, @colNum, @count + 1);
+}
+.smSmOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
+	.checkVal() when ((@count + @colNum) =< @colTotal){
+		.pure-u-sm-@{colNum}-@{colTotal}.left-sm-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			left: ~"@{p}%";
+		}
+		.pure-u-sm-@{colNum}-@{colTotal}.right-sm-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			right: ~"@{p}%";
+		}
+	}
+	.checkVal();
+	.smSmOffset(@colTotal, @colNum, @count + 1);
+}
+// Medium Stuff
+.mdMediaOffsetsXl(@n, @i: 1) when (@i < @n){
+	.xlMdOffset(@n, @i); // Sm Grid
+	.mdMediaOffsetsXl(@n, @i + 1);
+}
+.mdMediaOffsetsLg(@n, @i: 1) when (@i < @n){
+	.lgMdOffset(@n, @i); // Sm Grid
+	.mdMediaOffsetsLg(@n, @i + 1);
+}
+.mdMediaOffsetsMd(@n, @i: 1) when (@i < @n){
+	.mdMdOffset(@n, @i); // Sm Grid
+	.mdMediaOffsetsMd(@n, @i + 1);
+}
+
+.xlMdOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
+	.checkVal() when ((@count + @colNum) =< @colTotal){
 		.pure-u-xl-@{colNum}-@{colTotal}.left-sm-@{count},
-		.pure-u-sm-@{colNum}-@{colTotal}.left-@{count} {
+		.pure-u-xl-@{colNum}-@{colTotal}.left-md-@{count}{
 			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
 			left: ~"@{p}%";
 		}
-		.pure-u-sm-@{colNum}-@{colTotal}.right-sm-@{count},
-		.pure-u-md-@{colNum}-@{colTotal}.right-sm-@{count},
-		.pure-u-lg-@{colNum}-@{colTotal}.right-sm-@{count},
 		.pure-u-xl-@{colNum}-@{colTotal}.right-sm-@{count},
-		.pure-u-sm-@{colNum}-@{colTotal}.right-@{count} {
+		.pure-u-xl-@{colNum}-@{colTotal}.right-md-@{count}{
 			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
 			right: ~"@{p}%";
 		}
 	}
 	.checkVal();
-	.smOffset(@colTotal, @colNum, @count + 1);
+	.xlMdOffset(@colTotal, @colNum, @count + 1);
 }
-.mdOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
+.lgMdOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
 	.checkVal() when ((@count + @colNum) =< @colTotal){
-		.pure-u-md-@{colNum}-@{colTotal}.left-md-@{count},
-		.pure-u-lg-@{colNum}-@{colTotal}.left-md-@{count},
+		.pure-u-lg-@{colNum}-@{colTotal}.left-sm-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.left-md-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			left: ~"@{p}%";
+		}
+		.pure-u-lg-@{colNum}-@{colTotal}.right-sm-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.right-md-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			right: ~"@{p}%";
+		}
+	}
+	.checkVal();
+	.lgMdOffset(@colTotal, @colNum, @count + 1);
+}
+.mdMdOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
+	.checkVal() when ((@count + @colNum) =< @colTotal){
+		.pure-u-md-@{colNum}-@{colTotal}.left-sm-@{count},
+		.pure-u-md-@{colNum}-@{colTotal}.left-md-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			left: ~"@{p}%";
+		}
+		.pure-u-md-@{colNum}-@{colTotal}.right-sm-@{count},
+		.pure-u-md-@{colNum}-@{colTotal}.right-md-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			right: ~"@{p}%";
+		}
+	}
+	.checkVal();
+	.mdMdOffset(@colTotal, @colNum, @count + 1);
+}
+// Large Stuff
+.lgMediaOffsetsXl(@n, @i: 1) when (@i < @n){
+	.xlLgOffset(@n, @i); // Sm Grid
+	.lgMediaOffsetsXl(@n, @i + 1);
+}
+.lgMediaOffsetsLg(@n, @i: 1) when (@i < @n){
+	.lgLgOffset(@n, @i); // Sm Grid
+	.lgMediaOffsetsLg(@n, @i + 1);
+}
+.xlLgOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
+	.checkVal() when ((@count + @colNum) =< @colTotal){
+		.pure-u-xl-@{colNum}-@{colTotal}.left-sm-@{count},
 		.pure-u-xl-@{colNum}-@{colTotal}.left-md-@{count},
-		.pure-u-md-@{colNum}-@{colTotal}.left-@{count} {
+		.pure-u-xl-@{colNum}-@{colTotal}.left-lg-@{count}{
 			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
 			left: ~"@{p}%";
 		}
-		.pure-u-md-@{colNum}-@{colTotal}.right-md-@{count},
-		.pure-u-lg-@{colNum}-@{colTotal}.right-md-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.right-sm-@{count},
 		.pure-u-xl-@{colNum}-@{colTotal}.right-md-@{count},
-		.pure-u-md-@{colNum}-@{colTotal}.right-@{count} {
+		.pure-u-xl-@{colNum}-@{colTotal}.right-lg-@{count}{
 			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
 			right: ~"@{p}%";
 		}
 	}
 	.checkVal();
-	.mdOffset(@colTotal, @colNum, @count + 1);
+	.xlLgOffset(@colTotal, @colNum, @count + 1);
 }
-.lgOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
+.lgLgOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
 	.checkVal() when ((@count + @colNum) =< @colTotal){
-		.pure-u-lg-@{colNum}-@{colTotal}.left-lg-@{count},
+		.pure-u-lg-@{colNum}-@{colTotal}.left-sm-@{count},
+		.pure-u-lg-@{colNum}-@{colTotal}.left-md-@{count},
+		.pure-u-lg-@{colNum}-@{colTotal}.left-lg-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			left: ~"@{p}%";
+		}
+		.pure-u-lg-@{colNum}-@{colTotal}.right-sm-@{count},
+		.pure-u-lg-@{colNum}-@{colTotal}.right-md-@{count},
+		.pure-u-lg-@{colNum}-@{colTotal}.right-lg-@{count}{
+			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
+			right: ~"@{p}%";
+		}
+	}
+	.checkVal();
+	.lgLgOffset(@colTotal, @colNum, @count + 1);
+}
+// XL-Large Stuff
+.xlMediaOffsets(@n, @i: 1) when (@i < @n){
+	.xlXlOffset(@n, @i);
+	.xlMediaOffsets(@n, @i + 1);
+}
+.xlXlOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
+	.checkVal() when ((@count + @colNum) =< @colTotal){
+		.pure-u-xl-@{colNum}-@{colTotal}.left-sm-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.left-md-@{count},
 		.pure-u-xl-@{colNum}-@{colTotal}.left-lg-@{count},
-		.pure-u-lg-@{colNum}-@{colTotal}.left-@{count} {
+		.pure-u-xl-@{colNum}-@{colTotal}.left-xl-@{count}{
 			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
 			left: ~"@{p}%";
 		}
-		.pure-u-lg-@{colNum}-@{colTotal}.right-lg-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.right-sm-@{count},
+		.pure-u-xl-@{colNum}-@{colTotal}.right-md-@{count},
 		.pure-u-xl-@{colNum}-@{colTotal}.right-lg-@{count},
-		.pure-u-lg-@{colNum}-@{colTotal}.right-@{count} {
+		.pure-u-xl-@{colNum}-@{colTotal}.right-xl-@{count}{
 			@p: round(@count / @colTotal * 100, 4);
+			position: relative;
 			right: ~"@{p}%";
 		}
 	}
 	.checkVal();
-	.lgOffset(@colTotal, @colNum, @count + 1);
+	.xlXlOffset(@colTotal, @colNum, @count + 1);
 }
-.xlOffset(@colTotal, @colNum, @count: 1) when (@count < @colTotal){
-	.checkVal() when ((@count + @colNum) =< @colTotal){
-		.pure-u-xl-@{colNum}-@{colTotal}.left-xl-@{count},
-		.pure-u-xl-@{colNum}-@{colTotal}.left-@{count} {
-			@p: round(@count / @colTotal * 100, 4);
-			left: ~"@{p}%";
-		}
-		.pure-u-xl-@{colNum}-@{colTotal}.right-xl-@{count},
-		.pure-u-xl-@{colNum}-@{colTotal}.right-@{count} {
-			@p: round(@count / @colTotal * 100, 4);
-			right: ~"@{p}%";
-		}
-	}
-	.checkVal();
-	.xlOffset(@colTotal, @colNum, @count + 1);
-}
+
 .regOffsets(@n, @i: 1) when (@i < @n){
 	.baseOffset(@n, @i); // Default Grid
 	.regOffsets(@n, @i + 1);
-}
-.smMediaOffsets(@n, @i: 1) when (@i < @n){
-	.smOffset(@n, @i); // Sm Grid
-	.smMediaOffsets(@n, @i + 1);
-}
-.mdMediaOffsets(@n, @i: 1) when (@i < @n){
-	.mdOffset(@n, @i); // Sm Grid
-	.mdMediaOffsets(@n, @i + 1);
-}
-.lgMediaOffsets(@n, @i: 1) when (@i < @n){
-	.lgOffset(@n, @i); // Sm Grid
-	.lgMediaOffsets(@n, @i + 1);
-}
-.xlMediaOffsets(@n, @i: 1) when (@i < @n){
-	.xlOffset(@n, @i); // Sm Grid
-	.xlMediaOffsets(@n, @i + 1);
 }
 
 .regOffsets(2);
@@ -127,34 +264,88 @@
 .regOffsets(24);
 
 @media screen and (min-width: 35.5em){
-	.smMediaOffsets(2);
-	.smMediaOffsets(3);
-	.smMediaOffsets(4);
-	.smMediaOffsets(5);
-	.smMediaOffsets(6);
-	.smMediaOffsets(8);
-	.smMediaOffsets(12);
-	.smMediaOffsets(24);
+	.smMediaOffsetsXl(2);
+	.smMediaOffsetsXl(3);
+	.smMediaOffsetsXl(4);
+	.smMediaOffsetsXl(5);
+	.smMediaOffsetsXl(6);
+	.smMediaOffsetsXl(8);
+	.smMediaOffsetsXl(12);
+	.smMediaOffsetsXl(24);
+
+	.smMediaOffsetsLg(2);
+	.smMediaOffsetsLg(3);
+	.smMediaOffsetsLg(4);
+	.smMediaOffsetsLg(5);
+	.smMediaOffsetsLg(6);
+	.smMediaOffsetsLg(8);
+	.smMediaOffsetsLg(12);
+	.smMediaOffsetsLg(24);
+
+	.smMediaOffsetsMd(2);
+	.smMediaOffsetsMd(3);
+	.smMediaOffsetsMd(4);
+	.smMediaOffsetsMd(5);
+	.smMediaOffsetsMd(6);
+	.smMediaOffsetsMd(8);
+	.smMediaOffsetsMd(12);
+	.smMediaOffsetsMd(24);
+
+	.smMediaOffsetsSm(2);
+	.smMediaOffsetsSm(3);
+	.smMediaOffsetsSm(4);
+	.smMediaOffsetsSm(5);
+	.smMediaOffsetsSm(6);
+	.smMediaOffsetsSm(8);
+	.smMediaOffsetsSm(12);
+	.smMediaOffsetsSm(24);
 }
 @media screen and (min-width: 48em){
-	.mdMediaOffsets(2);
-	.mdMediaOffsets(3);
-	.mdMediaOffsets(4);
-	.mdMediaOffsets(5);
-	.mdMediaOffsets(6);
-	.mdMediaOffsets(8);
-	.mdMediaOffsets(12);
-	.mdMediaOffsets(24);
+	.mdMediaOffsetsXl(2);
+	.mdMediaOffsetsXl(3);
+	.mdMediaOffsetsXl(4);
+	.mdMediaOffsetsXl(5);
+	.mdMediaOffsetsXl(6);
+	.mdMediaOffsetsXl(8);
+	.mdMediaOffsetsXl(12);
+	.mdMediaOffsetsXl(24);
+
+	.mdMediaOffsetsLg(2);
+	.mdMediaOffsetsLg(3);
+	.mdMediaOffsetsLg(4);
+	.mdMediaOffsetsLg(5);
+	.mdMediaOffsetsLg(6);
+	.mdMediaOffsetsLg(8);
+	.mdMediaOffsetsLg(12);
+	.mdMediaOffsetsLg(24);
+
+	.mdMediaOffsetsMd(2);
+	.mdMediaOffsetsMd(3);
+	.mdMediaOffsetsMd(4);
+	.mdMediaOffsetsMd(5);
+	.mdMediaOffsetsMd(6);
+	.mdMediaOffsetsMd(8);
+	.mdMediaOffsetsMd(12);
+	.mdMediaOffsetsMd(24);
 }
 @media screen and (min-width: 64em){
-	.lgMediaOffsets(2);
-	.lgMediaOffsets(3);
-	.lgMediaOffsets(4);
-	.lgMediaOffsets(5);
-	.lgMediaOffsets(6);
-	.lgMediaOffsets(8);
-	.lgMediaOffsets(12);
-	.lgMediaOffsets(24);
+	.lgMediaOffsetsXl(2);
+	.lgMediaOffsetsXl(3);
+	.lgMediaOffsetsXl(4);
+	.lgMediaOffsetsXl(5);
+	.lgMediaOffsetsXl(6);
+	.lgMediaOffsetsXl(8);
+	.lgMediaOffsetsXl(12);
+	.lgMediaOffsetsXl(24);
+
+	.lgMediaOffsetsLg(2);
+	.lgMediaOffsetsLg(3);
+	.lgMediaOffsetsLg(4);
+	.lgMediaOffsetsLg(5);
+	.lgMediaOffsetsLg(6);
+	.lgMediaOffsetsLg(8);
+	.lgMediaOffsetsLg(12);
+	.lgMediaOffsetsLg(24);
 }
 @media screen and (min-width: 80em){
 	.xlMediaOffsets(2);
